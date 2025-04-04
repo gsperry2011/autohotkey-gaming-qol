@@ -2,11 +2,23 @@
 ;; Autorun.
 ;; credit from https://www.reddit.com/r/ARKone/comments/bi1vly/autohotkey_useful_macros_for_ark_survival_evolved/
 ;; mouse thumb button, forward. 
+;; version 1.0 7dtd and beyond:
+;; #IfWinActive 7 Days To Die
+;; *$XButton2::
+;;    Send % (WalkToggle := !WalkToggle) ? "{W Down}" : "{W Up}"
+;; Return
+
+;; alpha 20 7dtd (no sprint toggle option in game)
+;; works for undead legacy
 #IfWinActive 7 Days To Die
 *$XButton2::
-    Send % (WalkToggle := !WalkToggle) ? "{W Down}" : "{W Up}"
+    WalkToggle := !WalkToggle
+    if (WalkToggle) {
+        Send, {Shift Down}{W Down}
+    } else {
+        Send, {Shift Up}{W Up}
+    }
 Return
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; AutoAttack
