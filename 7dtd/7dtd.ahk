@@ -25,6 +25,7 @@ Return
 ;; credit: https://community.7daystodie.com/topic/101-keyboard-autohotkey-scripts-autorun-and-such/
 ;Shift + Mouse button 5 locks down LMB for larger mining projects.
 ;Simply press LMB to stop.
+#IfWinActive 7 Days To Die
 +XButton2::
 Send {e up}{e down}
 Click up left
@@ -35,6 +36,7 @@ return
 
 ;Shift + Mouse button 4 is autofire for the E key when I traipse around the desert, picking up stuff.
 ;E to stop.
+#IfWinActive 7 Days To Die
 +XButton1::
 Loop 
 { 
@@ -44,4 +46,13 @@ Loop
 	if VKeyState = D 
 		break 
 } 
+return
+
+; F1 does a "open container (using e keybind) and then does a "move all stackable items"
+#IfWinActive 7 Days To Die
+F1::
+Send, e
+Sleep, 100 ; 1000 milliseconds = 1 second
+;  to identify the coords to place here, run the script -> in the task tray for the ahk script open 'window spy'
+Click, 2192, 286 ; Replace with your desired X,Y screen coordinates
 return
