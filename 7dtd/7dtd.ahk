@@ -27,7 +27,6 @@ Return
 ;Simply press LMB to stop.
 #IfWinActive 7 Days To Die
 +XButton2::
-Send {e up}{e down}
 Click up left
 sleep ,10
 Click down left
@@ -54,5 +53,9 @@ F1::
 Send, e
 Sleep, 100 ; 1000 milliseconds = 1 second
 ;  to identify the coords to place here, run the script -> in the task tray for the ahk script open 'window spy'
-Click, 2192, 286 ; Replace with your desired X,Y screen coordinates
+;; these are for me personally, in undead legacy the "move all" button moves around between cardboard and metal chests so the coords need to change here as you upgrade
+;; Cardboard boxes
+;; Click, 2192, 286 ; Replace with your desired X,Y screen coordinates
+;; iron chests
+Click, 2350, 286
 return
